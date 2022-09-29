@@ -7,7 +7,7 @@ client = commands.Bot(intents = intents, command_prefix = "s.")
 
 @client.event
 async def on_ready():
-    print('It fucking works now.')
+    print('It works!')
 
 @client.command()
 async def listnames(ctx):
@@ -39,5 +39,6 @@ async def test(ctx, role1, role2):
 async def ping(ctx):
     await ctx.send(f'Pong! {round(client.latency*100)}ms')
 
-client.run('')
+f = open("token.txt", "r")
+client.run(f.read())
 
